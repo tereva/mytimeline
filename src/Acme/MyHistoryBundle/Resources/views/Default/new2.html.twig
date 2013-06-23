@@ -15,9 +15,10 @@
 <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB9owMa7sUUv75LmPTJguIHTkVHgCLeOgQ&sensor=false">
  </script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.js"></script>
 
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 
 	<script type="text/javascript">
@@ -99,6 +100,9 @@ $(function() {
 
 
 <h1>NEW EVENT FORM</h1>
+
+<p>Date: <input type="text" id="datepicker" /></p>
+
 <form action="{{ path('event_add') }}"  method="post" {{ form_enctype(form) }}>
 {{ form_widget(form) }}
 

@@ -17,7 +17,7 @@ class DefaultController extends Controller
 		$form = $this->createFormBuilder($event)
 		->add('title', 'text',array('label'  => 'EVENT TITLE'))
 		->add('link', 'url', array('label'  => 'URL'))
-		->add('start', 'date', array('label'  => 'START',
+		->add('start', 'text', array('label'  => 'START',
 									'widget' => 'single_text', 
 									'input' => 'datetime', 
 									'format' => 'dd/MM/yyyy', 
@@ -36,9 +36,12 @@ class DefaultController extends Controller
 		->add('lng', 'text', array('label'  => 'LONGITUDE'))
 		->getForm();
 		
+  		
+
 		if ($request->getMethod() == 'POST') 
 		{
-			$form->bindRequest($request);
+			
+                        $form->handleRequest($request);
 			if ($form->isValid()) 
 			{
 				// perform some action, such as saving the task to the database
@@ -46,8 +49,8 @@ class DefaultController extends Controller
 				$em->persist($event);
 				$em->flush();
 				//return new Response('<html><body>Enregistrement ok, nº ' . $event->getId(). '</body></html>');
-				return $this->redirect($this->generateUrl('event_timeline'));
-				//return $this->showallAction();
+				//return $this->redirect($this->generateUrl('event_timeline'));
+				return $this->showallAction();
 			}
 		}
 		return $this->render('AcmeMyHistoryBundle:Default:new2.html.twig', array(

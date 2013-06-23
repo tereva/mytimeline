@@ -21,24 +21,28 @@ class DefaultController extends Controller
 									'widget' => 'single_text', 
 									'input' => 'datetime', 
 									'format' => 'dd/MM/yyyy', 
-									'attr' => array('class' => 'datepicker'),
+									'attr' => array('id' => 'datepicker'),
                                      )) 	 
 		->add('end', 'date', array('label'  => 'END',
 									'widget' => 'single_text', 
 									'input' => 'datetime', 
 									'format' => 'dd/MM/yyyy', 
-									'attr' => array('class' => 'datepicker'),
+									'attr' => array('id' => 'datepicker'),
                                      )) 
-		->add('description', 'textarea', array('label'  => 'DESCRIPTION'))			 
+		->add('latestStart', 'text',array('label'  => 'test', 'attr' => array('id' => 'datepicker')))
+                ->add('description', 'textarea', array('label'  => 'DESCRIPTION'))			 
 		->add('durationEvent', 'checkbox', array('required'  => false, 'label'  => 'IS-IT A DURATION EVENT ? ' ))	
 		->add('address', 'text', array('label'  => 'ADDRESS'))
 		->add('lat', 'text', array('label'  => 'LATITUDE'))
 		->add('lng', 'text', array('label'  => 'LONGITUDE'))
 		->getForm();
 		
+  		
+
 		if ($request->getMethod() == 'POST') 
 		{
-			$form->bindRequest($request);
+			
+                        $form->handleRequest($request);
 			if ($form->isValid()) 
 			{
 				// perform some action, such as saving the task to the database
@@ -46,8 +50,8 @@ class DefaultController extends Controller
 				$em->persist($event);
 				$em->flush();
 				//return new Response('<html><body>Enregistrement ok, nº ' . $event->getId(). '</body></html>');
-				return $this->redirect($this->generateUrl('event_timeline'));
-				//return $this->showallAction();
+				//return $this->redirect($this->generateUrl('event_timeline'));
+				return $this->showallAction();
 			}
 		}
 		return $this->render('AcmeMyHistoryBundle:Default:new2.html.twig', array(
