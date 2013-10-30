@@ -7,3 +7,18 @@ event_showall:
 event_timeline:
     pattern:  /event_timeline
     defaults: { _controller: AcmeMyHistoryBundle:Default:timeline}
+event_test:
+    pattern:  /event_test
+    defaults: { _controller: AcmeMyHistoryBundle:Default:test}
+event_test2:
+    pattern:  /event_test2
+    defaults: { _controller: AcmeMyHistoryBundle:Default:test2}
+event_monoin:
+    pattern:  /event_monoin
+    defaults: { _controller: AcmeMyHistoryBundle:Default:monoin}
+event_monoshow:
+    pattern:  /monoall
+    defaults: { _controller: AcmeMyHistoryBundle:Default:monoshow}
+event_multiin:
+    pattern:  /multiin
+    defaults: { _controller: AcmeMyHistoryBundle:Default:multiin}

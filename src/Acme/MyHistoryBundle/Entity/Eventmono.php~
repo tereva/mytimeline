@@ -1,0 +1,200 @@
+<?php
+
+namespace Acme\MyHistoryBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Eventmono
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Eventmono
+{
+	//ELEMENTS BASES
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    private $title;
+
+   //*****************************************
+   // START MOMENT 
+   //**************************************** 
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="syear", type="integer")
+     */
+    private $syear;
+
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="smonth", type="integer")
+     */
+     private $smonth;
+
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="sday", type="integer")
+     */
+     private $sday;
+
+     /**
+     * @var time 
+     *
+     * @ORM\Column(name="stime", type="time")
+     */
+    private $stime;
+
+     // EARLIEST
+
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="ersyear", type="integer")
+     */
+    private $ersyear;
+
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="ersmonth", type="integer")
+     */
+     private $ersmonth;
+
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="ersday", type="integer")
+     */
+     private $ersday;
+
+     /**
+     * @var time 
+     *
+     * @ORM\Column(name="erstime", type="time")
+     */
+    private $erstime;
+
+    // START PLACE
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="scountry", type="string", length=255)
+     */
+    private $scountry;
+
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="sstate", type="string", length=255)
+     */
+    private $sstate;
+
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="scity", type="string", length=255)
+     */
+   private $scity;
+
+
+
+  //*****************************************
+   // END MOMENT 
+   //**************************************** 
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="eyear", type="integer")
+     */
+    private $eyear;
+
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="emonth", type="integer")
+     */
+     private $emonth;
+
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="eday", type="integer")
+     */
+     private $eday;
+
+     /**
+     * @var time 
+     *
+     * @ORM\Column(name="etime", type="time")
+     */
+    private $etime;
+
+     //LATEST END 
+
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="laeyear", type="integer")
+     */
+    private $laeyear;
+
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="laemonth", type="integer")
+     */
+     private $laemonth;
+
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="laeday", type="integer")
+     */
+     private $laeday;
+
+     /**
+     * @var time 
+     *
+     * @ORM\Column(name="laetime", type="time")
+     */
+    private $laetime;
+
+    // START PLACE
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ecountry", type="string", length=255)
+     */
+    private $ecountry;
+
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="estate", type="string", length=255)
+     */
+    private $estate;
+
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="ecity", type="string", length=255)
+     */
+   private $ecity;
+
+}

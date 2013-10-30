@@ -1,0 +1,20 @@
+		$event = new myEvent2();
+		$event->setTitle("Titre");
+
+		$deb = new myStart();
+		$deb->setYear(1978);
+		$deb->setPlace("Paris");
+		$deb->setEvent($event);
+	
+		$fin = new myEnd();
+		$fin->setYear(1997);
+		$fin->setPlace("Papeete");
+		$fin->setEvent($event);
+
+		$em = $this->getDoctrine()->getManager();
+       		$em->persist($event);
+       		$em->persist($deb);
+		$em->persist($fin);
+        	$em->flush();
+
+

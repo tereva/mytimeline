@@ -2,18 +2,21 @@
 <html>
 <head>
 <title>NEW EVENT FORM</title>
-
-<body> 
+<body>
 
 
 <h1>NEW EVENT FORM</h1>
 
+
 <form action="{{ path('event_monoin') }}"  method="post" {{ form_enctype(form) }}>
 {{ form_widget(form) }}
+
 <input type="submit" />
 </form>
 
-<a href="event_showall">Show All</a>
+
+
+<a href="event_monoshow">Show All</a>
 
 </body>
 </html>
